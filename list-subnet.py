@@ -12,5 +12,5 @@ def lambda_handler(event, context):
         cidr_ips = 2**(32-n)
         used_ips = cidr_ips - free_ips
         calc= free_ips * 100
-        print('VPC={:s}, Subnet={:s}: VPC-CIDR={:d}, Ips_reservados_AWS=5, Ips_usados={:d}, ips_Livres={:d}, total_percent_livre={:f}%'.\
+        print('VPC={:s}, Subnet={:s}: VPC-CIDR={:d}, Ips_reservados_AWS=5, Ips_usados={:d}, ips_Livres={:d}, total_percent_livre={:0f}%'.\
             format(subnet.vpc_id, subnet.id, cidr_ips, used_ips - 5, free_ips, calc / cidr_ips))
